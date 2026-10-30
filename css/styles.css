@@ -1,0 +1,232 @@
+:root {
+  --carbono: #0D0E11;
+  --grafite: #1A1C22;
+  --aco: #5B6068;
+  --nevoa: #A8ACB4;
+  --concreto: #D9DBDF;
+  --bone: #F4F3EE;
+  --azul: #1E5BFF;
+  --azul-700: #1140C7;
+  --azul-300: #6F95FF;
+  --volt: #D4FF1F;
+  --volt-deep: #A6C800;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--carbono);
+  color: var(--bone);
+}
+
+h1, h2, h3, .heading-font {
+  font-family: 'Archivo', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, var(--volt), var(--volt-deep));
+  color: var(--carbono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(212, 255, 31, 0.25);
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, var(--azul), var(--azul-700));
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(30, 91, 255, 0.25);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillar-card {
+  background: var(--grafite);
+  border: 1px solid #22252D;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.pillar-card:hover {
+  border-color: var(--azul);
+  transform: translateY(-4px);
+}
+
+.plan-card {
+  background: var(--grafite);
+  border: 1px solid #22252D;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+}
+
+.plan-card.featured {
+  border-color: var(--azul);
+}
+
+.plan-card.featured:hover {
+  box-shadow: 0 0 40px rgba(30, 91, 255, 0.12);
+}
+
+.plan-card.premium {
+  border-color: var(--volt);
+}
+
+.plan-card.premium:hover {
+  box-shadow: 0 0 40px rgba(212, 255, 31, 0.12);
+}
+
+.badge-blue {
+  background: rgba(30, 91, 255, 0.15);
+  color: var(--azul);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.badge-lime {
+  background: rgba(212, 255, 31, 0.15);
+  color: var(--volt);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.accent-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--azul), var(--volt));
+}
+
+.faq-item {
+  border-bottom: 1px solid #22252D;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-chevron {
+  transition: transform 0.3s;
+}
+
+.sticky-cta-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 12px 16px;
+  background: rgba(13, 14, 17, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(30, 91, 255, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.sticky-cta-mobile.show {
+  transform: translateY(0);
+}
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 14, 17, 0.98);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.ba-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--grafite);
+  border: 1px solid #22252D;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aco);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .sticky-cta-mobile {
+    display: none !important;
+  }
+}
+/* Efeito de transição suave para o desfoque do Hero */
+#hero-art-container img {
+  will-change: filter, transform, opacity;
+  transform-origin: center center;
+}
+
+/* Oculta a barra de rolagem no carrossel mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
