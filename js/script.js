@@ -1,5 +1,5 @@
 // DADOS DE CONTATO E REDES
-const WHATSAPP_URL = 'https://wa.me/554499016109';
+const WHATSAPP_URL = 'https://wa.me/5544997639621';
 const INSTAGRAM_URL = 'https://www.instagram.com/weverton__personal/';
 const EMAIL = 'Wevertongg8@gmail.com';
 const CREF_NUMBER = '043932-G/PR';
