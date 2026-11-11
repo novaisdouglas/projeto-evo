@@ -1,3 +1,11 @@
+// Desativa a memória de scroll do navegador para a página
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Força o scroll para o topo ao carregar
+window.scrollTo(0, 0);
+
 // DADOS DE CONTATO E REDES
 const WHATSAPP_URL = 'https://wa.me/5544997639621';
 const INSTAGRAM_URL = 'https://www.instagram.com/weverton__personal/';
@@ -111,13 +119,13 @@ const heroImg = document.getElementById('hero-img');
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-  const triggerHeight = window.innerHeight * 0.75;
+  const triggerHeight = window.innerHeight * 1.75;
 
   if (scrollY <= triggerHeight) {
     const progress = Math.min(scrollY / triggerHeight, 1);
     
     const blurAmount = progress * 14;
-    const opacityAmount = 1 - (progress * 0.45);
+    const opacityAmount = 1 - (progress * .45);
 
     if (heroImg) {
       heroImg.style.filter = `blur(${blurAmount}px)`;
@@ -158,3 +166,16 @@ if (carousel && prevBtn && nextBtn) {
     }
   }, { passive: true });
 }
+  const evoCarousel = document.getElementById('evo-carousel');
+  const prevEvoBtn = document.getElementById('prev-evo-btn');
+  const nextEvoBtn = document.getElementById('next-evo-btn');
+
+  if (evoCarousel && prevEvoBtn && nextEvoBtn) {
+    prevEvoBtn.addEventListener('click', () => {
+      evoCarousel.scrollBy({ left: -evoCarousel.clientWidth, behavior: 'smooth' });
+    });
+
+    nextEvoBtn.addEventListener('click', () => {
+      evoCarousel.scrollBy({ left: evoCarousel.clientWidth, behavior: 'smooth' });
+    });
+  }

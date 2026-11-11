@@ -24,12 +24,12 @@
 <body class="w-full min-h-screen antialiased overflow-x-hidden bg-[#0D0E11]">
 
   <!-- NAVEGAÇÃO -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0D0E11]/90 backdrop-blur-md border-b border-[#22252D]">
-    <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0D0E11]/90 backdrop-blur-md border-b border-[#22252D] fade-in">
+    <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between fade-in">
       <a href="#inicio" class="flex items-center">
-  <img src="Group 6.png" alt="Weverton Personal" class="h-6 md:h-7 w-auto object-contain">
+  <img src="Group 6.png" alt="Weverton Personal" class="h-6 md:h-7 w-auto object-contain fade-in">
 </a>
-      <div class="hidden md:flex gap-6 text-sm font-medium">
+      <div class="hidden md:flex gap-6 text-sm font-medium fade-in">
         <a href="#inicio" class="text-[#A8ACB4] hover:text-[#F4F3EE] transition">Início</a>
         <a href="#planos" class="text-[#A8ACB4] hover:text-[#F4F3EE] transition">Planos</a>
         <a href="#como-funciona" class="text-[#A8ACB4] hover:text-[#F4F3EE] transition">Como funciona</a>
@@ -60,14 +60,14 @@
 
   <main class="flex flex-col">
     <!-- HERO -->
-    <section id="inicio" class="relative min-h-[58vh] md:h-screen w-full">
+    <section id="inicio" class="relative min-h-[60vh] md:h-screen w-full fade-in">
       <div id="hero-art-container" class="fixed top-14 left-0 right-0 w-full h-auto md:h-[calc(100vh-3.5rem)] flex flex-col items-center justify-start md:justify-center pointer-events-none z-0 overflow-hidden px-0">
         
         <div class="relative w-full h-auto md:h-full flex flex-col items-center justify-start md:justify-center">
           
           <picture class="w-full flex items-center justify-center">
             <!-- DEPOIS -->
-            <source media="(orientation: portrait)" srcset="Arte-principal-mobile.png">
+            <source media="(orientation: portrait)" srcset="Arte-principal-mobile.jpeg">
             <source media="(orientation: landscape)" srcset="Arte-principal.jpeg">
             
             <img id="hero-img" 
@@ -80,7 +80,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-[#0D0E11] via-[#0D0E11]/10 to-transparent pointer-events-none"></div>
           
           <div class="mt-4 md:mt-0 md:absolute md:bottom-12 left-0 right-0 text-center px-4 pointer-events-auto z-10">
-            <a href="#planos" class="btn-blue px-7 py-3.5 md:px-8 md:py-4 rounded-lg text-xs md:text-base font-bold inline-block tracking-wider whitespace-nowrap shadow-2xl">
+            <a href="#planos" class="btn-blue px-7 py-3.5 md:px-8 md:py-4 rounded-lg text-xs md:text-base font-bold inline-block tracking-wider whitespace-nowrap shadow-2xl fade-in">
               <span>COMEÇAR MINHA TRANSFORMAÇÃO</span>
             </a>
           </div>
@@ -92,67 +92,268 @@
     <div class="relative z-10 bg-[#0D0E11] shadow-[0_-30px_60px_rgba(13,14,17,1)]">
 
       <!-- EVOLUÇÕES REAIS -->
-      <section id="evolucoes" class="py-20 px-4" style="background:linear-gradient(180deg,#1A1C22,#0D0E11)">
-      <div class="max-w-6xl mx-auto fade-in">
+    <section id="evolucoes" class="py-10 px-4" style="background: linear-gradient(180deg, #1A1C22, #0D0E11)">
+      <div class="max-w-6xl mx-auto">
         <div class="text-center mb-10">
-          <h2 class="font-black uppercase tracking-wider mb-2 text-2xl text-[#F4F3EE]">EVOLUÇÕES REAIS, HISTÓRIAS REAIS</h2>
-          <div class="accent-line mx-auto mb-4"></div>
-          <p class="max-w-2xl mx-auto text-sm text-[#A8ACB4]">Resultados e histórias de transformação.</p>
+          <h2 class="font-black uppercase tracking-wider mb-2 text-2xl text-[#F4F3EE] fade-in">EVOLUÇÕES REAIS, HISTÓRIAS REAIS</h2>
+          <div class="accent-line mx-auto mb-4 fade-in"></div>
+          <p class="max-w-2xl mx-auto text-sm text-[#A8ACB4] fade-in">Resultados e histórias de transformação.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Card 1 -->
-          <div class="pillar-card rounded-xl overflow-hidden p-3">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-1-before.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+
+        <!-- CONTAINER DO CARROSSEL -->
+        <div class="relative w-full fade-in">
+
+            <!-- Botão Seta Esquerda -->
+            <button id="prev-evo-btn" aria-label="Anterior" class="absolute -left-2 md:-left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-[#16181F]/90 border border-white/10 text-white hover:bg-blue-600 transition shadow-xl active:scale-95">
+              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+
+            <!-- Botão Seta Direita -->
+            <button id="next-evo-btn" aria-label="Próximo" class="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-[#16181F]/90 border border-white/10 text-white hover:bg-blue-600 transition shadow-xl active:scale-95">
+              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+
+          <div id="evo-carousel" class="flex overflow-x-auto gap-6 py-4 snap-x snap-mandatory scroll-smooth no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+            
+            <!-- SLIDE 1 MOBILE (Cards 1 e 2 empilhados no mobile | No PC fica oculto) -->
+            <div class="w-full flex-shrink-0 snap-start flex flex-col md:hidden gap-4">
+              <!-- Card 1 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-1-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-1-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
               </div>
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-1-after.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="pillar-card rounded-xl overflow-hidden p-3">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-2-before.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
-              </div>
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-2-after.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="pillar-card rounded-xl overflow-hidden p-3">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-3-before.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
-              </div>
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-3-after.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
-              </div>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div class="pillar-card rounded-xl overflow-hidden p-3">
-            <div class="grid grid-cols-2 gap-3">
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-4-before.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
-              </div>
-              <div class="relative ba-placeholder">
-                <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-4-after.png">
-                <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+              <!-- Card 2 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-2-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-2-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- SLIDE 2 MOBILE (Cards 3 e 4 empilhados no mobile | No PC fica oculto) -->
+            <div class="w-full flex-shrink-0 snap-start flex flex-col md:hidden gap-4">
+              <!-- Card 3 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-3-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-3-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-4-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-4-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 MOBILE (Cards 5 e 6 empilhados no mobile | Formato .jpeg) -->
+            <div class="w-full flex-shrink-0 snap-start flex flex-col md:hidden gap-4">
+              <!-- Card 5 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-5-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-5-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-6-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-6-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 MOBILE (Cards 7 e 8 empilhados no mobile | Formato .jpeg) -->
+            <div class="w-full flex-shrink-0 snap-start flex flex-col md:hidden gap-4">
+              <!-- Card 7 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-7-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-7-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 8 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-8-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-8-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 1 PC (Cards 1 a 4 na grade 2x2 | Só aparece no Desktop) -->
+            <div class="hidden md:grid min-w-full flex-shrink-0 snap-start grid-cols-2 gap-6">
+              <!-- Card 1 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-1-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-1-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-2-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-2-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-3-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-3-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-4-before.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-4-after.png">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 PC (Cards 5 a 8 na grade 2x2 | Só aparece no Desktop ao rolar para o lado | .jpeg) -->
+            <div class="hidden md:grid min-w-full flex-shrink-0 snap-start grid-cols-2 gap-6">
+              <!-- Card 5 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-5-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-5-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-6-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-6-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 7 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-7-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-7-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 8 -->
+              <div class="pillar-card rounded-xl overflow-hidden p-3 w-full">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Antes" src="assets/evo-8-before.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#A8ACB4]">Antes</span>
+                  </div>
+                  <div class="relative ba-placeholder">
+                    <img class="w-full h-full object-cover absolute inset-0" alt="Depois" src="assets/evo-8-after.jpeg">
+                    <span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0D0E11]/70 text-[#1E5BFF]">Depois</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
@@ -185,7 +386,7 @@
         </div>
         <!-- AVISOS IMPORTANTES / PRAZOS -->
         <div class="mt-12 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-          <div class="p-4 rounded-xl bg-[#1A1C22] border border-[#22252D] flex items-start gap-3.5">
+          <div class="p-4 rounded-xl bg-[#1A1C22] border border-[#22252D] flex items-start gap-3.5 fade-in">
             <div class="w-9 h-9 rounded-lg bg-[#0D0E11] border border-[#1E5BFF]/30 flex items-center justify-center shrink-0 text-[#1E5BFF]">
               <i data-lucide="clock" style="width:18px;height:18px"></i>
             </div>
@@ -197,7 +398,7 @@
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-[#1A1C22] border border-[#22252D] flex items-start gap-3.5">
+          <div class="p-4 rounded-xl bg-[#1A1C22] border border-[#22252D] flex items-start gap-3.5 fade-in">
             <div class="w-9 h-9 rounded-lg bg-[#0D0E11] border border-[#D4FF1F]/30 flex items-center justify-center shrink-0 text-[#D4FF1F]">
               <i data-lucide="map-pin" style="width:18px;height:18px"></i>
             </div>
@@ -255,94 +456,13 @@
         <div class="accent-line mx-auto mb-4"></div>
         <p class="max-w-2xl mx-auto mb-10 text-sm text-[#A8ACB4]">Compartilhe sua experiência e conheça os relatos de quem faz parte da nossa comunidade.</p>
 
-        <!-- CARROSSEL NO MOBILE / GRID NO DESKTOP -->
-    <div class="relative w-full mb-10 overflow-hidden">
-      <!-- Container deslizante -->
-      <div id="reviews-carousel" class="flex md:grid md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory scroll-smooth no-scrollbar px-4 md:px-0 text-left">
-        
-        <!-- CARD 1: Douglas -->
-        <div class="w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 snap-start bg-white p-6 rounded-2xl shadow-xl flex flex-col justify-between border border-gray-100">
-          <div>
-            <!-- Header do Autor -->
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-11 h-11 rounded-full bg-[#E5E7EB] flex items-center justify-center font-bold text-sm text-[#4B5563] shrink-0">
-                DO
-              </div>
-              <h3 class="font-bold text-base text-[#111827]">Douglas</h3>
-            </div>
-
-            <!-- Estrelas Douradas -->
-            <div class="flex items-center gap-1 text-[#F59E0B] mb-3">
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-
-            <!-- Texto escuro e legível -->
-            <p class="text-xs sm:text-sm text-[#374151] leading-relaxed break-words whitespace-normal mb-4 font-normal">
-              A consultoria do Weverton superou todas as minhas expectativas. Ele monta treinos realmente ajustados à minha rotina, sempre atento à execução correta para evitar lesões e maximizar os resultados. O suporte e a atenção dele no dia a dia fazem toda a diferença para manter o foco. Recomendo de olhos fechados!
-            </p>
-          </div>
-          <p class="text-[11px] text-[#9CA3AF] mt-2 font-medium">24 de Out, 2026</p>
-        </div>
-
-        <!-- CARD 2: Michelle turatti -->
-        <div class="w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 snap-start bg-white p-6 rounded-2xl shadow-xl flex flex-col justify-between border border-gray-100">
-          <div>
-            <!-- Header do Autor -->
-            <div class="flex items-center gap-3 mb-3">
-              <img src="https://api.manyfeed.com.br/storage/v1/object/public/avatars/4f0fd2e2-02ae-4b49-9d65-15173658fa72/a0819fb1-c6ba-427e-99a3-9b6c01f36a67-avatar-IMG_2725.webp" 
-                   alt="Michelle turatti" 
-                   class="w-11 h-11 rounded-full object-cover border border-gray-200 shrink-0">
-              <h3 class="font-bold text-base text-[#111827]">Michelle turatti</h3>
-            </div>
-
-            <!-- Estrelas Douradas -->
-            <div class="flex items-center gap-1 text-[#F59E0B] mb-3">
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-
-            <!-- Texto escuro e legível -->
-            <p class="text-xs sm:text-sm text-[#374151] leading-relaxed break-words whitespace-normal mb-4 font-normal">
-              Sempre fui acostumada a treinar com personal presencial!!mais depois da consultoria do Weverton senti q sou capaz sim de treinar sozinha !!mesmo com a dificuldade de progredir carga as vezes mais gosto do jeito q ele monta os treinos pra mim !!!
-            </p>
-          </div>
-          <p class="text-[11px] text-[#9CA3AF] mt-2 font-medium">22 de Out, 2026</p>
-        </div>
-
-      </div>
-
-     <!-- Botão Voltar (Esquerda - Mobile) -->
-      <button id="carousel-prev" 
-              onclick="document.getElementById('reviews-carousel').scrollBy({left: -300, behavior: 'smooth'})"
-              class="md:hidden hidden absolute left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white text-gray-700 flex items-center justify-center shadow-md border border-gray-200 active:scale-95 transition-all" 
-              aria-label="Depoimento anterior">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <!-- Botão Avançar (Direita - Mobile) -->
-      <button id="carousel-next" 
-              onclick="document.getElementById('reviews-carousel').scrollBy({left: 300, behavior: 'smooth'})"
-              class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white text-gray-700 flex items-center justify-center shadow-md border border-gray-200 active:scale-95 transition-all" 
-              aria-label="Próximo depoimento">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-    </div>
+            <script src="https://manyfeed.com.br/embed/v1/loader.js" async></script>
+            <div class="manyfeed-widget fade-in" data-id="a0e48c0860"></div>
 
         <a href="https://manyfeed.com.br/form/uG0WHp" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-[#1E5BFF] bg-[#1A1C22] text-[#F4F3EE] hover:bg-[#1E5BFF] hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg">
+           class="mt-16 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-[#1E5BFF] bg-[#1A1C22] text-[#F4F3EE] hover:bg-[#1E5BFF] hover:text-white font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg">
           <i data-lucide="message-square-plus" style="width:16px;height:16px"></i>
           <span>DEIXAR MINHA AVALIAÇÃO</span>
         </a>
@@ -547,7 +667,7 @@
     </div>
   </div>
     <!-- NOTAS DE COBRANÇA E SEGURANÇA -->
-    <div class="mt-12 text-center max-w-2xl mx-auto space-y-4">
+    <div class="mt-12 text-center max-w-2xl mx-auto space-y-4 fade-in">
       <p class="text-xs text-[#A8ACB4] leading-relaxed">
         Os valores mensais dos planos trimestral e anual são referências de custo por mês. A cobrança corresponde ao valor total do período contratado, conforme condições informadas no checkout.
       </p>
@@ -690,14 +810,13 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t pt-4 pb-24 md:py-8 px-4 border-[#22252D]">
+  <footer class="border-t pt-4 pb-24 md:py-8 px-4 border-[#22252D] fade-in">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-xs text-[#5B6068] max-w-xl mx-auto leading-relaxed mb-4">
         Os resultados apresentados são individuais e dependem da assiduidade e dedicação de cada aluno ao plano estipulado.
       </p>
       <p class="text-xs text-[#5B6068]">© 2026 Weverton Borges. Todos os direitos reservados.</p>
 
-      <!-- ASSINATURA / CRÉDITOS DO DESENVOLVEDOR -->
     <!-- ASSINATURA / CRÉDITOS DO DESENVOLVEDOR -->
     <p class="text-[11px] text-[#5B6068] pt-1 inline-flex items-center justify-center gap-1.5 flex-wrap">
       <span>Desenvolvimento e Otimização por</span>
@@ -724,3 +843,5 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
+
