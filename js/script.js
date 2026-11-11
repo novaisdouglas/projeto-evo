@@ -125,7 +125,7 @@ window.addEventListener('scroll', () => {
     const progress = Math.min(scrollY / triggerHeight, 1);
     
     const blurAmount = progress * 14;
-    const opacityAmount = 1 - (progress * .45);
+    const opacityAmount = 1 - (progress * 0.45);
 
     if (heroImg) {
       heroImg.style.filter = `blur(${blurAmount}px)`;
